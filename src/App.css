@@ -1,0 +1,23 @@
+
+.userImage {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  background-color: rgb(203, 9, 9);
+  border-radius: 20px;
+  padding: 10px;
+}
+  
+
+
+
+
+
+
