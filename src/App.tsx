@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import axios from 'axios'
 
 interface GitHubUser {
   login: string
@@ -24,12 +25,19 @@ interface GitHubUser {
 function App() {
   const [users, setUsers] = useState([])
   useEffect(function () {
-    fetch('https://api.github.com/users')
-      .then((res) => res.json())
-      .then((data) => {
-        // expectedData = data
-        setUsers(data)
-      })
+    //then method
+    //fetch('https://api.github.com/users')
+    // .then((res) => res.json())
+    //.then((data) => {
+
+    //  setUsers(data)
+    //async await
+    async function getUsers() {
+      const response = await axios('https://api.github.com/users')
+      setUsers(response.data)
+    }
+    getUsers()
+
   }, [])
 
   return users.map((user: GitHubUser) => {
